@@ -14,4 +14,10 @@ enum AppFont {
     static func wordmark(size: CGFloat) -> Font {
         .system(size: size, weight: .black, design: .default)
     }
+
+    /// Body copy face — a friendly rounded sans, used for the Welcome
+    /// screen's subtitle and button labels.
+    static func body(size: CGFloat, weight: Font.Weight = .regular) -> Font {
+        .system(size: size, weight: weight, design: .rounded)
+    }
 }

@@ -30,4 +30,32 @@ enum AppSpacing {
         /// geometric centre.
         static let wordmarkOffsetXRatio: CGFloat = 0.022057
     }
+
+    /// Welcome screen layout, expressed relative to screen width/height so
+    /// the composition holds across device sizes.
+    enum Welcome {
+        /// Lockup (mark + wordmark) width as a fraction of screen width.
+        static let lockupWidthRatio: CGFloat = 0.50
+
+        /// Left/right inset for the subtitle and buttons.
+        static let horizontalMarginRatio: CGFloat = 0.088
+
+        /// Space between the lockup and the subtitle.
+        static let subtitleTopGapRatio: CGFloat = 0.044
+
+        /// Subtitle line spacing.
+        static let subtitleLineSpacing: CGFloat = 4
+
+        /// Space between the subtitle and the button stack.
+        static let buttonStackTopGapRatio: CGFloat = 0.09
+
+        /// Pill button height as a fraction of screen width.
+        static let buttonHeightRatio: CGFloat = 0.145
+
+        /// Gap between the two stacked buttons.
+        static let buttonSpacingRatio: CGFloat = 0.024
+
+        /// Fixed bottom inset below the button stack.
+        static let bottomPaddingRatio: CGFloat = 0.14
+    }
 }

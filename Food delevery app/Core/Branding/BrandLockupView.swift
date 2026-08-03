@@ -3,7 +3,8 @@
 //  Food delevery app
 //
 //  The mark and wordmark set together at the master artwork's proportions.
-//  Stateless: everything derives from a single width.
+//  Stateless: every screen supplies its own tint, since the lockup appears
+//  in both a coral-on-gold (Splash) and gold-on-terracotta (Welcome) form.
 //
 
 import SwiftUI
@@ -11,6 +12,13 @@ import SwiftUI
 struct BrandLockupView: View {
     /// Width of the mark. Every other dimension is derived from it.
     let markWidth: CGFloat
+
+    /// Color shared by the mark's strokes and the "YUM" half of the
+    /// wordmark — the two always match in the master artwork.
+    let accentColor: Color
+
+    /// Color of the "QUICK" half of the wordmark.
+    let quickColor: Color
 
     private typealias Layout = AppSpacing.BrandLockup
 
@@ -34,7 +42,7 @@ struct BrandLockupView: View {
         VStack(spacing: 0) {
             BrandMarkShape()
                 .stroke(
-                    AppColor.primary,
+                    accentColor,
                     style: StrokeStyle(
                         lineWidth: markWidth * BrandMarkGeometry.strokeRatio,
                         lineCap: .round,
@@ -56,16 +64,13 @@ struct BrandLockupView: View {
     private func wordmark(metrics: BrandWordmarkMetrics) -> some View {
         HStack(spacing: metrics.kerning) {
             Text(yumText)
-                .foregroundStyle(AppColor.primary)
+                .foregroundStyle(accentColor)
             Text(quickText)
-                .foregroundStyle(AppColor.onPrimary)
+                .foregroundStyle(quickColor)
         }
         .font(AppFont.wordmark(size: metrics.fontSize))
         .kerning(metrics.kerning)
         .fixedSize(horizontal: true, vertical: false)
-        // Collapse the line box down to the cap band so the gap above is
-        // measured from the cap line, as the artwork specifies, rather than
-        // from the font's ascender.
         .frame(height: capHeight)
     }
 }
@@ -73,6 +78,6 @@ struct BrandLockupView: View {
 #Preview {
     ZStack {
         AppColor.background.ignoresSafeArea()
-        BrandLockupView(markWidth: 223)
+        BrandLockupView(markWidth: 223, accentColor: AppColor.primary, quickColor: AppColor.onPrimary)
     }
 }

@@ -4,3 +4,8 @@
 
 /* Accessibility */
 "splash_logo_accessibility_label" = "YumQuick logo";
+
+/* Welcome screen */
+"welcome_subtitle" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.";
+"welcome_log_in" = "Log In";
+"welcome_sign_up" = "Sign Up";

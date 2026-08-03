@@ -21,7 +21,9 @@ struct SplashView<ViewModel: SplashViewModelProtocol>: View {
                 AppColor.background
 
                 BrandLockupView(
-                    markWidth: proxy.size.width * AppSpacing.BrandLockup.widthRatio
+                    markWidth: proxy.size.width * AppSpacing.BrandLockup.widthRatio,
+                    accentColor: AppColor.primary,
+                    quickColor: AppColor.onPrimary
                 )
             }
             .frame(width: proxy.size.width, height: proxy.size.height)
