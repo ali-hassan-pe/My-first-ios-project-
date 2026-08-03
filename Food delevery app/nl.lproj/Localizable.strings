@@ -1,0 +1,11 @@
+/* Splash screen wordmark, split so each half can be tinted independently */
+"brand_name_yum" = "YUM";
+"brand_name_quick" = "QUICK";
+
+/* Accessibility */
+"splash_logo_accessibility_label" = "YumQuick-logo";
+
+/* Welcome screen */
+"welcome_subtitle" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.";
+"welcome_log_in" = "Inloggen";
+"welcome_sign_up" = "Registreren";
